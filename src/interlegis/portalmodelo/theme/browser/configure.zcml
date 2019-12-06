@@ -1,0 +1,85 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plone">
+
+  <!-- Portal Modelo viewlets -->
+  <browser:viewlet
+      name="plone.site_actions"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+      permission="zope2.View"
+      layer="..interfaces.IBrowserLayer"
+      />
+
+    <include package='.contraste' />
+
+    <!-- The portal header -->
+    <browser:viewlet
+        name="plone.header"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        class=".viewlets.HeaderViewlet"
+        template="templates/header.pt"
+        permission="zope2.View"
+        layer="..interfaces.IBrowserLayer"
+        />
+
+    <browser:viewlet
+        name="plone.logo"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        permission="zope2.View"
+        class=".viewlets.LogoViewlet"
+        layer="..interfaces.IBrowserLayer"
+    />
+
+    <browser:viewlet
+        name="plone.footer"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        permission="zope2.View"
+        template="templates/footer.pt"
+        layer="..interfaces.IBrowserLayer"
+    />
+
+    <browser:viewlet
+        name="plone.colophon"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        permission="zope2.View"
+        template="templates/colophon.pt"
+        layer="..interfaces.IBrowserLayer"
+    />
+
+    <adapter factory=".site.SiteControlPanelAdapter" />
+
+    <browser:page
+        name="site-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".site.SiteControlPanel"
+        permission="plone.app.controlpanel.Site"
+        layer="..interfaces.IBrowserLayer"
+    />
+
+   <!-- Change Sitemap behavior for Portal Modelo -->
+
+    <browser:page
+        name="sitemap_builder_view"
+        for="*"
+        class=".sitemap.CatalogSiteMap"
+        permission="zope.Public"
+        allowed_attributes="siteMap"
+        layer="interlegis.portalmodelo.theme.interfaces.IBrowserLayer"
+    />
+
+    <browser:page
+        name="view"
+        for="interlegis.portalmodelo.theme.interfaces.IStream"
+        class=".stream.StreamView"
+        template="templates/stream_view.pt"
+        permission="zope2.View"
+        />
+
+   <adapter for="*
+                Products.CMFPlone.browser.interfaces.ISiteMap"
+            factory=".sitemap.InterlegisSitemapNavtreeStrategy"
+            provides=".interfaces.IPortalModeloSiteMapStrategy" />
+
+</configure>

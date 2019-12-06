@@ -1,0 +1,111 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="interlegis.portalmodelo.theme">
+
+  <include package="plone.resource" />
+
+  <!-- Temas -->
+  <plone:static
+      type="theme"
+      name="Areia"
+      directory="themes/Areia"
+      />
+
+  <plone:static
+      type="theme"
+      name="Azul"
+      directory="themes/Azul"
+      />
+
+  <plone:static
+      type="theme"
+      name="Clean"
+      directory="themes/Clean"
+      />
+
+  <plone:static
+      type="theme"
+      name="Concreto"
+      directory="themes/Concreto"
+      />
+
+  <plone:static
+      type="theme"
+      name="Gelo"
+      directory="themes/Gelo"
+      />
+
+  <plone:static
+      type="theme"
+      name="Kiwi"
+      directory="themes/Kiwi"
+      />
+
+  <plone:static
+      type="theme"
+      name="Moderno"
+      directory="themes/Moderno"
+      />
+
+  <plone:static
+      type="theme"
+      name="Vermelho"
+      directory="themes/Vermelho"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-amarelo"
+      directory="themes/IDG-amarelo"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-azul"
+      directory="themes/IDG-azul"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-branco"
+      directory="themes/IDG-branco"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-verde"
+      directory="themes/IDG-verde"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-rosa"
+      directory="themes/IDG-rosa"
+      />
+
+  <plone:static
+      type="theme"
+      name="IDG-azul-11"
+      directory="themes/IDG-azul-11"
+      />
+
+  <plone:static
+      type="theme"
+      name="Original"
+      directory="themes/Original"
+      />
+
+  <plone:static
+      type="theme"
+      name="Apucarana"
+      directory="themes/Apucarana"
+      />
+
+  <plone:static
+      type="theme"
+      name="Interlegis"
+      directory="themes/Interlegis"
+      />
+
+</configure>

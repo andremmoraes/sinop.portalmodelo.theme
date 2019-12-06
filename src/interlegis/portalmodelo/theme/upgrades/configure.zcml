@@ -1,0 +1,7 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Passos de atualização -->
+  <include package=".v2" />
+  <include package=".v3" />
+
+</configure>

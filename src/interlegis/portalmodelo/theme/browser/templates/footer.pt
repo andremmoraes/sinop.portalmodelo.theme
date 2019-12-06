@@ -1,0 +1,23 @@
+<div metal:define-macro="portal_footer"
+i18n:domain="plone"
+class="row">
+
+  <div id="portal-footer">
+
+    <a  class="tile"
+        tal:condition="python:request.AUTHENTICATED_USER.has_role(['Manager', 'Administrator'], context)"
+        tal:attributes="href string:${context/portal_url}/footer-page/edit">
+      <span class="edit-button" i18n:translate=""
+            i18n:domain="plone">Edit</span>
+    </a>
+
+    <span tal:replace="structure python:context.portal_url.getPortalObject()['footer-page'].getText()" />
+
+    <p class="visualClear"></p>
+
+  </div>
+
+  <p class="visualClear"></p>
+
+</div>
+
